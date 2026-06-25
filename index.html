@@ -173,6 +173,7 @@
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 28px;
+      justify-content: center;
     }
 
     .button {
@@ -312,21 +313,22 @@
     }
 
     details.topic-section {
-      border: 1px solid var(--soft-line);
+      border: 1px solid #b7d7e6;
       border-radius: 18px;
-      background: #ffffff;
+      background: #fbfdfe;
       padding: 0;
       overflow: hidden;
+      box-shadow: 0 6px 18px rgba(15, 94, 140, 0.06);
     }
 
     details.topic-section summary {
       cursor: pointer;
       list-style: none;
       padding: 18px 20px;
-      background: #f9fbfc;
-      border-bottom: 1px solid var(--soft-line);
+      background: linear-gradient(180deg, #f2f9fc, #eaf5fa);
+      border-bottom: 1px solid #b7d7e6;
       font-weight: 800;
-      color: #17202a;
+      color: #12384f;
     }
 
     details.topic-section summary::-webkit-details-marker {
@@ -337,7 +339,8 @@
       content: "＋";
       float: right;
       color: var(--accent);
-      font-weight: 800;
+      font-weight: 900;
+      font-size: 1.1rem;
     }
 
     details.topic-section[open] summary::after {
@@ -353,6 +356,57 @@
     .project-list,
     .contact-list {
       padding-left: 1.1rem;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+    
+    .person-card {
+      border: 1px solid #cfe2ec;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #ffffff, #f7fbfd);
+      padding: 18px 20px;
+      box-shadow: 0 6px 18px rgba(15, 94, 140, 0.04);
+    }
+    
+    .person-name {
+      margin: 0 0 4px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #17202a;
+    }
+    
+    .person-role {
+      margin: 0 0 4px;
+      color: #12384f;
+      font-weight: 700;
+    }
+    
+    .person-affiliation {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+    
+    .person-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .person-links a {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: var(--tag-bg);
+      border: 1px solid #d8e9f1;
+      font-size: 0.86rem;
+      line-height: 1.2;
     }
 
     .muted {
@@ -386,7 +440,8 @@
       }
 
       .topic-grid,
-      .featured-grid {
+      .featured-grid,
+      .people-grid {
         grid-template-columns: 1fr;
       }
 
@@ -689,6 +744,70 @@
       <p class="small-note">
         This section can be expanded with official project names, funding information, grant numbers,
         partner logos, or links to public project pages.
+      </p>
+    </section>
+
+        </section>
+
+    <section class="section" id="people">
+      <h2>People</h2>
+      <p class="section-intro">
+        Members of the Structural Dynamics and Diagnostics Laboratory involved in
+        research activities on structural dynamics, diagnostics, structural health
+        monitoring, virtual sensing, hydroelasticity, and damage identification.
+      </p>
+
+      <div class="people-grid">
+
+        <article class="person-card">
+          <p class="person-name">Name Surname</p>
+          <p class="person-role">Laboratory coordinator / Senior researcher</p>
+          <p class="person-affiliation">CNR-INM · Institute of Marine Engineering</p>
+          <div class="person-links">
+            <a href="#">ORCID</a>
+            <a href="#">Google Scholar</a>
+            <a href="#">Institutional profile</a>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <p class="person-name">Name Surname</p>
+          <p class="person-role">Researcher</p>
+          <p class="person-affiliation">CNR-INM · Institute of Marine Engineering</p>
+          <div class="person-links">
+            <a href="#">ORCID</a>
+            <a href="#">Google Scholar</a>
+            <a href="#">Institutional profile</a>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <p class="person-name">Name Surname</p>
+          <p class="person-role">Postdoctoral researcher</p>
+          <p class="person-affiliation">CNR-INM · Institute of Marine Engineering</p>
+          <div class="person-links">
+            <a href="#">ORCID</a>
+            <a href="#">Google Scholar</a>
+            <a href="#">Institutional profile</a>
+          </div>
+        </article>
+
+        <article class="person-card">
+          <p class="person-name">Name Surname</p>
+          <p class="person-role">PhD student / Research fellow</p>
+          <p class="person-affiliation">CNR-INM · Institute of Marine Engineering</p>
+          <div class="person-links">
+            <a href="#">ORCID</a>
+            <a href="#">Google Scholar</a>
+            <a href="#">Institutional profile</a>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="small-note">
+        Additional collaborators, students, and project partners can be added depending
+        on the scope of the presentation, poster, or event.
       </p>
     </section>
 
