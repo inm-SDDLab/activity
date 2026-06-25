@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Selected publications, projects, and research resources from the Structural Dynamics and Diagnostics Laboratory (LabSDD), CNR-INM." />
+  <title>LabSDD | Selected Publications and Resources</title>
+
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --ink: #1f2933;
+      --muted: #5f6b7a;
+      --line: #d9dee5;
+      --soft-line: #edf0f4;
+      --accent: #0f5e8c;
+      --accent-dark: #0b3f5e;
+      --accent-soft: #e7f3f8;
+      --tag-bg: #eef6fa;
+      --shadow: 0 18px 45px rgba(15, 35, 55, 0.10);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(15, 94, 140, 0.10), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(15, 94, 140, 0.08), transparent 32%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+      text-decoration: underline;
+    }
+
+    .page {
+      width: min(1220px, calc(100% - 36px));
+      margin: 32px auto 56px;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(160px, 260px) minmax(0, 1fr) minmax(160px, 260px);
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 28px;
+    }
+
+    .side-image {
+      min-height: 560px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: linear-gradient(135deg, #e9eef2, #f8fafc);
+      border: 1px dashed #aeb8c4;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--muted);
+      padding: 24px;
+      position: relative;
+    }
+
+    .side-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 560px;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      display: block;
+    }
+
+    .side-image .placeholder {
+      max-width: 180px;
+      font-size: 0.95rem;
+      z-index: 1;
+    }
+
+    .side-image.has-image {
+      border: none;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 34px 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .topline {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .logo-box {
+      width: 118px;
+      height: 118px;
+      border-radius: 22px;
+      background: #ffffff;
+      border: 1px solid #d7dee8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-align: center;
+      padding: 4px;
+    }
+
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lab-name {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      line-height: 1.05;
+      font-size: clamp(2.4rem, 4.2vw, 4.1rem);
+      letter-spacing: -0.045em;
+      color: #17202a;
+    }
+
+    .subtitle {
+      margin: 22px 0 0;
+      font-size: clamp(1.04rem, 1.7vw, 1.24rem);
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.94rem;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      color: #ffffff;
+      background: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: #ffffff;
+      color: var(--accent);
+    }
+
+    .button.secondary:hover {
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+    }
+
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 28px rgba(15, 35, 55, 0.06);
+      padding: 30px 34px;
+      margin: 22px 0;
+    }
+
+    .section h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.45rem, 2vw, 2rem);
+      letter-spacing: -0.02em;
+      color: #17202a;
+    }
+
+    .section-intro {
+      margin-top: 0;
+      color: var(--muted);
+      max-width: 900px;
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .topic {
+      background: var(--accent-soft);
+      border: 1px solid #cfe5ef;
+      color: #18374a;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-weight: 700;
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .featured-card,
+    .publication {
+      border: 1px solid var(--soft-line);
+      border-radius: 18px;
+      background: #ffffff;
+      padding: 18px 20px;
+    }
+
+    .featured-card {
+      background: linear-gradient(180deg, #ffffff, #f9fbfc);
+    }
+
+    .paper-title {
+      margin: 0 0 8px;
+      font-weight: 800;
+      line-height: 1.35;
+      color: #17202a;
+      font-size: 1.03rem;
+    }
+
+    .authors,
+    .venue {
+      margin: 4px 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .links a,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: var(--tag-bg);
+      border: 1px solid #d8e9f1;
+      font-size: 0.86rem;
+      line-height: 1.2;
+    }
+
+    .tag {
+      color: #285067;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .publication-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    details.topic-section {
+      border: 1px solid var(--soft-line);
+      border-radius: 18px;
+      background: #ffffff;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    details.topic-section summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 18px 20px;
+      background: #f9fbfc;
+      border-bottom: 1px solid var(--soft-line);
+      font-weight: 800;
+      color: #17202a;
+    }
+
+    details.topic-section summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.topic-section summary::after {
+      content: "＋";
+      float: right;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    details.topic-section[open] summary::after {
+      content: "–";
+    }
+
+    .topic-content {
+      padding: 16px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .project-list,
+    .contact-list {
+      padding-left: 1.1rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .small-note {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .side-image {
+        min-height: 320px;
+      }
+
+      .side-image img {
+        min-height: 320px;
+      }
+
+      .topic-grid,
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        padding: 28px 24px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .page {
+        width: min(100% - 22px, 1220px);
+        margin-top: 14px;
+      }
+
+      .section {
+        padding: 24px 18px;
+      }
+
+      .topline {
+        align-items: flex-start;
+      }
+
+      .logo-box {
+        width: 88px;
+        height: 88px;
+      }
+
+      .links {
+        gap: 6px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .side-image {
+        display: none;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .section,
+      .hero-card {
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <section class="hero" aria-label="LabSDD overview">
+      <!-- LEFT VERTICAL IMAGE PLACEHOLDER
+           Replace the file assets/lab-left.jpg with your laboratory image.
+           Recommended: vertical image, approx. 900 x 1400 px or similar. -->
+      <aside class="side-image" id="left-lab-image">
+        <img src="assets/lab-left.jpg" alt="Laboratory image" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none';" />
+        <div class="placeholder">
+          <strong>Left laboratory image</strong><br />
+          Add file:<br />
+          <code>assets/lab-left.jpg</code>
+        </div>
+      </aside>
+
+      <div class="hero-card">
+        <div class="topline">
+          <!-- LAB LOGO PLACEHOLDER
+               Replace the file assets/labsdd-logo.png with the LabSDD logo.
+               Recommended: transparent PNG or SVG. -->
+          <div class="logo-box">
+            <img src="assets/labsdd-logo.jpg" alt="LabSDD logo" onload="this.nextElementSibling.style.display='none';" onerror="this.style.display='none';" />
+            <span>LabSDD<br />logo</span>
+          </div>
+
+          <div>
+            <p class="lab-name">Structural Dynamics and Diagnostics Laboratory</p>
+            <p class="muted" style="margin: 4px 0 0;">CNR-INM · Institute of Marine Engineering</p>
+          </div>
+        </div>
+
+        <h1>Research outputs</h1>
+
+        <p class="subtitle">
+          Selected publications and resources from LabSDD on structural dynamics,
+          diagnostics, structural health monitoring, virtual sensing, hydroelasticity,
+          uncertainty analysis, and damage identification.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button" href="#publications">Browse publications</a>
+          <a class="button secondary" href="https://www.inm.cnr.it/labs/structural-dynamics-diagnostics/">LabSDD website</a>
+          <a class="button secondary" href="https://www.linkedin.com/company/structural-dynamics-and-diagnostics-laboratory/">LinkedIn page</a>
+        </div>
+      </div>
+
+      <!-- RIGHT VERTICAL IMAGE PLACEHOLDER
+           Replace the file assets/lab-right.jpg with your laboratory image.
+           Recommended: vertical image, approx. 900 x 1400 px or similar. -->
+      <aside class="side-image" id="right-lab-image">
+        <img src="assets/lab-right.jpg" alt="Laboratory image" onload="this.parentElement.classList.add('has-image'); this.nextElementSibling.style.display='none';" onerror="this.style.display='none';" />
+        <div class="placeholder">
+          <strong>Right laboratory image</strong><br />
+          Add file:<br />
+          <code>assets/lab-right.jpg</code>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="topics">
+      <h2>Research topics</h2>
+      <p class="section-intro">
+        The selected works are connected to experimental and numerical research activities
+        on marine and mechanical structures, with emphasis on vibration-based diagnostics,
+        model validation, digital-twin-oriented monitoring, and data-driven decision support.
+      </p>
+
+      <div class="topic-grid">
+        <div class="topic">Structural Health Monitoring</div>
+        <div class="topic">Damage identification and localization</div>
+        <div class="topic">Virtual sensing and digital twins</div>
+        <div class="topic">Hydroelasticity and ship structures</div>
+        <div class="topic">Modal analysis and model validation</div>
+        <div class="topic">Uncertainty analysis and machine learning</div>
+      </div>
+    </section>
+
+    <section class="section" id="featured">
+      <h2>Highlighted publications</h2>
+      <p class="section-intro">
+        A compact selection of recent and representative works connected to the laboratory
+        research activities.
+      </p>
+
+      <div class="featured-grid">
+        <article class="featured-card">
+          <span class="tag">Hydroelastic digital twinning</span>
+          <p class="paper-title">Variable-Stiffness Ship Elastic Models for Hydroelastic Digital Twinning</p>
+          <p class="authors">Dessi, D.; Passacantilli, F.; Venturi, A.; Delgado, D.; Van Dijke, R.; Terroba, F.; Bardiani, J.; Sbarufatti, C.; Sandström, J.; Haridas, A.</p>
+          <p class="venue"><em>10th International Conference on Hydroelasticity in Marine Technology</em>, May 2026.</p>
+        </article>
+
+        <article class="featured-card">
+          <span class="tag">Damage identification</span>
+          <p class="paper-title">Analysis and mitigation of uncertainties in damage identification by modal-curvature based methods</p>
+          <p class="authors">Dessi, D.; Passacantilli, F.; Venturi, A.</p>
+          <p class="venue"><em>Journal of Sound and Vibration</em>, 596, 118769, 2025.</p>
+          <div class="links">
+            <a href="https://doi.org/10.1016/j.jsv.2024.118769">DOI</a>
+          </div>
+        </article>
+
+        <article class="featured-card">
+          <span class="tag">Virtual sensing</span>
+          <p class="paper-title">Continuous Mapping of Deformation Over a Ship Structure Model Based on Pointwise Measurements</p>
+          <p class="authors">Dessi, D.; Saltari, F.; Venturi, A.</p>
+          <p class="venue"><em>Proceedings of the 11th European Workshop on Structural Health Monitoring</em>, 2024.</p>
+          <div class="links">
+            <a href="https://doi.org/10.58286/29752">DOI</a>
+          </div>
+        </article>
+
+        <article class="featured-card">
+          <span class="tag">Transfer learning</span>
+          <p class="paper-title">Robustness vs. effectiveness of transfer learning in damage identification depending on feature selection</p>
+          <p class="authors">Venturi, A.; Dessi, D.; Ruta, G.</p>
+          <p class="venue"><em>11th International Operational Modal Analysis Conference</em>, May 2025.</p>
+          <div class="links">
+            <a href="https://hal.science/hal-05232753v1">HAL record</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <h2>Publications by topic</h2>
+      <p class="section-intro">
+        The list below is organized by research topic to support conference presentations,
+        poster discussions, and follow-up reading.
+      </p>
+
+      <details class="topic-section" open>
+        <summary>Hydroelasticity, ship structures, and digital-twin-oriented monitoring</summary>
+        <div class="topic-content">
+          <article class="publication">
+            <p class="paper-title">Variable-Stiffness Ship Elastic Models for Hydroelastic Digital Twinning</p>
+            <p class="authors">Dessi, D.; Passacantilli, F.; Venturi, A.; Delgado, D.; Van Dijke, R.; Terroba, F.; Bardiani, J.; Sbarufatti, C.; Sandström, J.; Haridas, A.</p>
+            <p class="venue"><em>10th International Conference on Hydroelasticity in Marine Technology</em>, May 2026.</p>
+          </article>
+
+          <article class="publication">
+            <p class="paper-title">Continuous Mapping of Deformation Over a Ship Structure Model Based on Pointwise Measurements</p>
+            <p class="authors">Dessi, D.; Saltari, F.; Venturi, A.</p>
+            <p class="venue"><em>Proceedings of the 11th European Workshop on Structural Health Monitoring</em>, 2024.</p>
+            <div class="links">
+              <a href="https://doi.org/10.58286/29752">DOI</a>
+            </div>
+          </article>
+
+          <article class="publication">
+            <p class="paper-title">Mechanical systems virtual sensing by proportional observer and multi resolution analysis</p>
+            <p class="authors">Saltari, F.; Dessi, D.; Mastroddi, F.</p>
+            <p class="venue"><em>Mechanical Systems and Signal Processing</em>, 2021.</p>
+            <div class="links">
+              <a href="https://doi.org/10.1016/j.ymssp.2020.107003">DOI</a>
+            </div>
+          </article>
+        </div>
+      </details>
+
+      <details class="topic-section" open>
+        <summary>Damage identification, modal curvature, and uncertainty analysis</summary>
+        <div class="topic-content">
+          <article class="publication">
+            <p class="paper-title">Analysis and mitigation of uncertainties in damage identification by modal-curvature based methods</p>
+            <p class="authors">Dessi, D.; Passacantilli, F.; Venturi, A.</p>
+            <p class="venue"><em>Journal of Sound and Vibration</em>, 596, 118769, 2025.</p>
+            <div class="links">
+              <a href="https://doi.org/10.1016/j.jsv.2024.118769">DOI</a>
+            </div>
+          </article>
+
+          <article class="publication">
+            <p class="paper-title">Damage identification on a flat panel based on combined modal curvature indices</p>
+            <p class="authors">Dessi, D.; Passacantilli, F.; Venturi, A.</p>
+            <p class="venue"><em>Innovations in the Analysis and Design of Marine Structures</em>, pp. 349–355, CRC Press, 2025.</p>
+            <div class="links">
+              <a href="https://dx.doi.org/10.1201/9781003642411-42">DOI</a>
+            </div>
+          </article>
+
+          <article class="publication">
+            <p class="paper-title">Use of ensemble learning in damage identification based on curvature analysis</p>
+            <p class="authors">Dessi, D.; Venturi, A.; Passacantilli, F.</p>
+            <p class="venue"><em>11th International Operational Modal Analysis Conference</em>, May 2025.</p>
+          </article>
+
+          <article class="publication">
+            <p class="paper-title">Hybrid Uncertainty Analysis of Damage Indexes Based on Modal Strain Energy</p>
+            <p class="authors">Dessi, D.; Passacantilli, F.; Venturi, A.</p>
+            <p class="venue"><em>International Operational Modal Analysis Conference</em>, pp. 561–572, Springer Nature Switzerland, May 2024.</p>
+            <div class="links">
+              <a href="https://doi.org/10.1007/978-3-031-61421-7_54">DOI</a>
+            </div>
+          </article>
+
+          <article class="publication">
+            <p class="paper-title">Damage identification techniques via modal curvature analysis: Overview and comparison</p>
+            <p class="authors">Dessi, D.; Camerlengo, G.</p>
+            <p class="venue"><em>Mechanical Systems and Signal Processing</em>, 2015.</p>
+            <div class="links">
+              <a href="https://doi.org/10.1016/j.ymssp.2014.05.031">DOI</a>
+            </div>
+          </article>
+        </div>
+      </details>
+
+      <details class="topic-section" open>
+        <summary>Transfer learning, hybrid approaches, and data-driven SHM</summary>
+        <div class="topic-content">
+          <article class="publication">
+            <p class="paper-title">Robustness vs. effectiveness of transfer learning in damage identification depending on feature selection</p>
+            <p class="authors">Venturi, A.; Dessi, D.; Ruta, G.</p>
+            <p class="venue"><em>11th International Operational Modal Analysis Conference</em>, May 2025.</p>
+            <div class="links">
+              <a href="https://hal.science/hal-05232753v1">HAL record</a>
+            </div>
+          </article>
+
+          <article class="publication">
+            <p class="paper-title">A Hybrid Approach for Damage Detection and Localization on a Plate-Like Structure</p>
+            <p class="authors">Venturi, A.; Dessi, D.</p>
+            <p class="venue"><em>Proceedings of the 11th European Workshop on Structural Health Monitoring</em>, 2024.</p>
+            <div class="links">
+              <a href="https://doi.org/10.58286/29658">DOI</a>
+            </div>
+          </article>
+        </div>
+      </details>
+    </section>
+
+    <section class="section" id="projects">
+      <h2>Projects and collaborations</h2>
+      <p class="section-intro">
+        The research outputs listed on this page are connected to broader activities on
+        structural dynamics, diagnostics, digital-twin-oriented monitoring, marine structures,
+        experimental testing, and uncertainty-aware damage identification.
+      </p>
+
+      <ul class="project-list">
+        <li><strong>dTHOR</strong> — Digital ship structural health monitoring and digital-twin-oriented methodologies.</li>
+        <li><strong>Hydroelasticity and ship structures</strong> — Experimental and numerical studies on flexible ship models and structural response reconstruction.</li>
+        <li><strong>Vibration-based diagnostics</strong> — Modal analysis, modal-curvature damage indexes, uncertainty analysis, and data-driven damage identification.</li>
+      </ul>
+
+      <p class="small-note">
+        This section can be expanded with official project names, funding information, grant numbers,
+        partner logos, or links to public project pages.
+      </p>
+    </section>
+
+    <section class="section" id="links-contact">
+      <h2>Group links and contact</h2>
+
+      <p>
+        <strong>Structural Dynamics and Diagnostics Laboratory - LabSDD</strong><br />
+        CNR-INM · Institute of Marine Engineering<br />
+        National Research Council of Italy
+      </p>
+
+      <ul class="contact-list">
+        <li><a href="https://www.inm.cnr.it/labs/structural-dynamics-diagnostics/">LabSDD institutional webpage</a></li>
+        <li><a href="https://www.linkedin.com/company/structural-dynamics-and-diagnostics-laboratory/">LabSDD LinkedIn page</a></li>
+      </ul>
+
+      <p class="small-note">
+        Contact details can be added here, for example a group email, the laboratory coordinator,
+        or the reference authors for the presentation/poster.
+      </p>
+    </section>
+
+    <footer>
+      LabSDD · Selected publications and resources · Last updated: June 2026
+    </footer>
+
+  </main>
+</body>
+</html>
