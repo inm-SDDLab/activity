@@ -313,22 +313,21 @@
     }
 
     details.topic-section {
-      border: 1px solid #b7d7e6;
+      border: 1px solid var(--soft-line);
       border-radius: 18px;
-      background: #fbfdfe;
+      background: #ffffff;
       padding: 0;
       overflow: hidden;
-      box-shadow: 0 6px 18px rgba(15, 94, 140, 0.06);
     }
 
     details.topic-section summary {
       cursor: pointer;
       list-style: none;
       padding: 18px 20px;
-      background: linear-gradient(180deg, #f2f9fc, #eaf5fa);
-      border-bottom: 1px solid #b7d7e6;
+      background: #f9fbfc;
+      border-bottom: 1px solid var(--soft-line);
       font-weight: 800;
-      color: #12384f;
+      color: #17202a;
     }
 
     details.topic-section summary::-webkit-details-marker {
@@ -371,8 +370,41 @@
       background: linear-gradient(180deg, #ffffff, #f7fbfd);
       padding: 18px 20px;
       box-shadow: 0 6px 18px rgba(15, 94, 140, 0.04);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .person-photo {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex: 0 0 auto;
+      background: #eaf5fa;
+      border: 2px solid #cfe2ec;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     
+    .person-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .person-photo span {
+      display: none;
+      color: #12384f;
+      font-weight: 800;
+      font-size: 1.25rem;
+    }
+    
+    .person-info {
+      min-width: 0;
+    }
     .person-name {
       margin: 0 0 4px;
       font-weight: 800;
@@ -471,6 +503,15 @@
 
       .links {
         gap: 6px;
+      }
+
+      .person-card {
+        align-items: flex-start;
+      }
+      
+      .person-photo {
+        width: 74px;
+        height: 74px;
       }
     }
 
@@ -760,48 +801,59 @@
       <div class="people-grid">
 
         <article class="person-card">
-          <p class="person-name">Name Surname</p>
-          <p class="person-role">Laboratory coordinator / Senior researcher</p>
-          <p class="person-affiliation">CNR-INM · Institute of Marine Engineering</p>
-          <div class="person-links">
-            <a href="#">ORCID</a>
-            <a href="#">Google Scholar</a>
-            <a href="#">Institutional profile</a>
+          <div class="person-photo">
+            <img src="assets/people/name-surname.jpg" alt="Name Surname" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <span>NS</span>
+          </div>
+        
+          <div class="person-info">
+            <p class="person-name">Daniele Dessi</p>
+            <p class="person-role">Laboratory coordinator/Senior researcher</p>
+            <p class="person-affiliation">CNR-INM · Institute of Marine Engineering</p>
+            <div class="person-links">
+              <a href="#">ORCID</a>
+              <a href="#">Google Scholar</a>
+              <a href="#">Institutional profile</a>
+            </div>
           </div>
         </article>
 
         <article class="person-card">
-          <p class="person-name">Name Surname</p>
-          <p class="person-role">Researcher</p>
-          <p class="person-affiliation">CNR-INM · Institute of Marine Engineering</p>
-          <div class="person-links">
-            <a href="#">ORCID</a>
-            <a href="#">Google Scholar</a>
-            <a href="#">Institutional profile</a>
+          <div class="person-photo">
+            <img src="assets/people/name-surname.jpg" alt="Name Surname" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <span>NS</span>
+          </div>
+        
+          <div class="person-info">
+            <p class="person-name">Fabio Passacantilli</p>
+            <p class="person-role">Research engineer</p>
+            <p class="person-affiliation">CNR-INM · Institute of Marine Engineering</p>
+            <div class="person-links">
+              <a href="#">ORCID</a>
+              <a href="#">Google Scholar</a>
+              <a href="#">Institutional profile</a>
+            </div>
           </div>
         </article>
 
         <article class="person-card">
-          <p class="person-name">Name Surname</p>
-          <p class="person-role">Postdoctoral researcher</p>
-          <p class="person-affiliation">CNR-INM · Institute of Marine Engineering</p>
-          <div class="person-links">
-            <a href="#">ORCID</a>
-            <a href="#">Google Scholar</a>
-            <a href="#">Institutional profile</a>
+          <div class="person-photo">
+            <img src="assets/people/name-surname.jpg" alt="Name Surname" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <span>NS</span>
+          </div>
+        
+          <div class="person-info">
+            <p class="person-name">Andrea Venturi</p>
+            <p class="person-role">Postdoctoral researcher</p>
+            <p class="person-affiliation">CNR-INM · Institute of Marine Engineering</p>
+            <div class="person-links">
+              <a href="#">ORCID</a>
+              <a href="#">Google Scholar</a>
+              <a href="#">Institutional profile</a>
+            </div>
           </div>
         </article>
-
-        <article class="person-card">
-          <p class="person-name">Name Surname</p>
-          <p class="person-role">PhD student / Research fellow</p>
-          <p class="person-affiliation">CNR-INM · Institute of Marine Engineering</p>
-          <div class="person-links">
-            <a href="#">ORCID</a>
-            <a href="#">Google Scholar</a>
-            <a href="#">Institutional profile</a>
-          </div>
-        </article>
+        
 
       </div>
 
